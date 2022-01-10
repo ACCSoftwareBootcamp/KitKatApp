@@ -1,2 +1,2 @@
-# Kit-Kat
+# KitKatApp
 Kit Kat Tracker App
