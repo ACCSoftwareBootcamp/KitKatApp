@@ -1,0 +1,30 @@
+
+#kitcat {
+    height: 380px;
+    width: 300px;
+}
+
+#banner{
+    background-color: rgb(214, 96, 132);
+}
+
+#intro{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+.search {
+    width: 100%;
+    background-color: grey;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#results{
+    border: 3px solid grey;
+    border-radius: 10px;
+    margin: 20px;
+}
+
