@@ -21,10 +21,32 @@ justify-content: center;
 margin: 10px 0px 0px 0px;
 }
 
+#login-banner{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0px 0px 0px;
+}
+
 .search{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.form-bg {
+  background-color: lightcoral;
+  width: 30vw;
+  height: 40vh;
+  border-radius: 5px;
 }
 
 #results{
