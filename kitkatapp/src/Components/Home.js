@@ -1,11 +1,11 @@
-
-
+import NavBar from './Navbar'
 import SearchBar from './SeachBar';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const Home = () => {
     return(
         <div>
+            <NavBar /> 
             <Container fluid>
             <Row className="row1">
                 <Col id="intro">

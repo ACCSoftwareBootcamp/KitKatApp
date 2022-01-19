@@ -4,6 +4,7 @@ const Login = () => {
     return(
 
         <div>
+            <NavBar /> 
             <Container fluid>
             <Row className="row1">
                 <Col id="login-banner">

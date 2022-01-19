@@ -4,6 +4,7 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 const Register = () => {
     return(
         <div>
+        <NavBar /> 
         <Container fluid>
         <Row className="row1">
             <Col id="login-banner">
