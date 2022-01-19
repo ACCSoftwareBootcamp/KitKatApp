@@ -1,4 +1,5 @@
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import NavBar from "./Navbar";
 
 const Login = () => {
     return(

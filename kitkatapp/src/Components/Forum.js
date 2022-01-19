@@ -1,4 +1,4 @@
-
+import NavBar from "./Navbar";
 
 const Forum = () => {
     return(

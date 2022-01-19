@@ -1,4 +1,4 @@
-
+import NavBar from "./Navbar";
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
 const Register = () => {
