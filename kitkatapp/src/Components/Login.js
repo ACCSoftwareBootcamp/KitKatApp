@@ -1,9 +1,11 @@
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import NavBar from "./Navbar";
 
 const Login = () => {
     return(
 
         <div>
+            <NavBar /> 
             <Container fluid>
             <Row className="row1">
                 <Col id="login-banner">
