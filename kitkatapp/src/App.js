@@ -6,12 +6,13 @@ import About from './Components/About'
 import Forum from './Components/Forum'
 import Login from './Components/Login';
 import Register from './Components/Register';
-import {Routes,Route,Link} from 'react-router-dom';
+import {Routes,Route} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/About' element={<About/>}/>
