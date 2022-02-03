@@ -2,12 +2,19 @@ import axios from "axios";
 import {useState} from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
+
 const Register = () => {
 
-    const [formData, setFormData] = useState({
-        username: "",
-        password: ""
-      }); 
+    const initialState = {
+      username: "",
+      password: ""
+    }
+
+    const [formData, setFormData] = useState(initialState); 
+
+      const resetFields = () => {
+        setFormData(initialState);
+      }
     
       const handleChange = (event) => {
         setFormData({
@@ -24,6 +31,7 @@ const Register = () => {
         axios.post('http://localhost:8080/newUsers', formData)
           .then(response => console.log(`Response data: ${response.data}`))
           .catch(error => console.log(`Error: ${error}`))
+          resetFields()
       }
 
     return(
@@ -45,12 +53,24 @@ const Register = () => {
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="text">
             <Form.Label>Username</Form.Label>
-            <Form.Control type="text" name="username" onChange={handleChange} placeholder="Create Username" />
+            <Form.Control 
+            type="text" 
+            name="username" 
+            id="username"
+            value={formData.username}
+            onChange={handleChange} 
+            placeholder="Create Username" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" name="password" onChange={handleChange} placeholder="Create Password" />
+            <Form.Control 
+            type="password" 
+            name="password" 
+            id="password"
+            value={formData.password}
+            onChange={handleChange} 
+            placeholder="Create Password" />
             </Form.Group>
 
             {/* <Form.Group className="mb-3" controlId="formBasicPassword">
