@@ -1,5 +1,6 @@
 import axios from "axios";
 import {useState} from 'react';
+import { useNavigate } from "react-router-dom";
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
 
@@ -10,12 +11,10 @@ const Register = () => {
       password: ""
     }
 
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState(initialState); 
 
-      const resetFields = () => {
-        setFormData(initialState);
-      }
-    
       const handleChange = (event) => {
         setFormData({
           ...formData, 
@@ -29,9 +28,10 @@ const Register = () => {
         //if not the same, write "return" - will exit the function/stop it from running
         //if the same, then run function
         axios.post('http://localhost:8080/newUsers', formData)
-          .then(response => console.log(`Response data: ${response.data}`))
+          .then(response => {
+            console.log(`Response data: ${response.data}`)
+            navigate('/Dashboard')})
           .catch(error => console.log(`Error: ${error}`))
-          resetFields()
       }
 
     return(
@@ -56,8 +56,6 @@ const Register = () => {
             <Form.Control 
             type="text" 
             name="username" 
-            id="username"
-            value={formData.username}
             onChange={handleChange} 
             placeholder="Create Username" />
             </Form.Group>
@@ -67,8 +65,6 @@ const Register = () => {
             <Form.Control 
             type="password" 
             name="password" 
-            id="password"
-            value={formData.password}
             onChange={handleChange} 
             placeholder="Create Password" />
             </Form.Group>
