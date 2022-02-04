@@ -11,6 +11,7 @@ return (
   <Nav className="me-auto">
       <Nav.Link href="/About">About</Nav.Link>
       <Nav.Link href="/Forum">Forum</Nav.Link>
+      <Nav.Link href="/Forum">Dashboard</Nav.Link>
       </Nav>
       <Button className = "nav-button" type="submit" variant="outline-light" href='/Login'>Login</Button>
       <Button className = "nav-button" type="submit" variant="outline-info" href='/Register'>Register</Button>
