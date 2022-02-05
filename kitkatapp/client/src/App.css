@@ -1,5 +1,5 @@
 
-.navbar-bg-custom{
+.nav-bg-custom{
   background-color: #BA0018;
 }
 
@@ -55,3 +55,8 @@ margin: 10px 0px 0px 0px;
   margin: 20px;
 }
 
+#dash-welcome {
+  background-color: rgb(245, 181, 181);
+  border: 2px solid rgb(153, 84, 84);
+  border-radius: 8px;
+}
