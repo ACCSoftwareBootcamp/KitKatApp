@@ -5,10 +5,12 @@ const app = express();
 const mongoose = require('mongoose')
 const keys = require('./config/keys')
 
+//Establish connection to Mongo Kit Kat database
 mongoose.connect(keys.mongoURI)
 .then(()=>console.log(`${keys.db} database connection established.`))
 .catch(error=>console.log(`${keys.db} database connection not established: ${error}`))
 
+//User Schema
 let KitKatUsersSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -20,6 +22,7 @@ let KitKatUsersSchema = new mongoose.Schema({
   }
 })
 
+//User Model
 let UsersModel = mongoose.model('KitKatUser', KitKatUsersSchema)
 
 app.use(cors())
