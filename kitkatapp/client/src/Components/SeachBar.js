@@ -1,6 +1,8 @@
 
 import { Dropdown, Form} from 'react-bootstrap';
 
+
+
 const SearchBar = () => {
  return(
 
@@ -11,7 +13,7 @@ const SearchBar = () => {
 </Dropdown.Toggle>
 
 <Dropdown.Menu>
- <Dropdown.Item href="#">All Flavors</Dropdown.Item>
+ <Dropdown.Item onClick="" href="#">All Flavors</Dropdown.Item>
  <Dropdown.Item href="#">Year-Round Flavors</Dropdown.Item>
  <Dropdown.Item href="#">Regional Flavors</Dropdown.Item>
  <Dropdown.Item href="#">Seasonal Flavors</Dropdown.Item>

@@ -25,7 +25,7 @@ const Register = () => {
       const handleSubmit = (event) => {
         event.preventDefault() 
         //enter if else statement for confirmpassword to work
-        //if not the same, write "return" - will exit the function/stop it from running
+        //if not the same, write "return" - will exit the function/stop it from running & also return error message?
         //if the same, then run function
         axios.post('http://localhost:8080/newUsers', formData)
           .then(response => {

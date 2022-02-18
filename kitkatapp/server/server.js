@@ -25,6 +25,27 @@ let KitKatUsersSchema = new mongoose.Schema({
 //User Model
 let UsersModel = mongoose.model('KitKatUser', KitKatUsersSchema)
 
+//Flavor Schema
+let KitKatFlavorsSchema = mongoose.Schema({
+  flavor: String,
+  image: String,
+  isSeasonal: {
+      type: Boolean,
+      default: false
+  },
+  isRegional: {
+      type: Boolean,
+      default: false
+  },
+  isAvailableYearRound: {
+      type: Boolean,
+      default: true
+  }
+})
+
+//Flavor Model
+let KitKatFlavorsModel = mongoose.model('KitKatFlavor', KitKatFlavorsSchema);
+
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({
@@ -32,14 +53,25 @@ app.use(express.urlencoded({
 }))
 
 app.post ('/newUsers', (req, res) => {
-  console.log(`User saved to ${keys.db}`, req.body)
   UsersModel.create({
     ...req.body }, 
     function(error, result){
       let message = error ? error : result;
-      res.json(JSON.stringify(message));
+      console.log(`User saved to ${keys.db}`, result)
+      res.json({message});
   });
 })
+
+app.get ('/getFlavors', (req, res) => {
+  KitKatFlavorsModel.find({}, 
+    function(error, result){
+       let message = error ? error : result;
+       console.log(`Flavors retrieved from ${keys.db}`, result)
+      res.json({message});
+  });
+})
+
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
