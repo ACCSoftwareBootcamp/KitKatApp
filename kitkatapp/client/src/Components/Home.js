@@ -1,5 +1,6 @@
 import axios from "axios";
 import SearchBar from "./SeachBar";
+import CardComp from "./CardComp";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react"; //useEffect determines when certain data will appear
 
@@ -26,8 +27,11 @@ const Home = () => {
   //dependency array - if it's blank, it will run when function first mounts (initial page render)
   //if it has stuff in it, it will rerun any time the page updates/changes
 
-console.log(kitKats[0].flavor)
-
+let displayKitKat = kitKats.map( element => {
+  return(
+    <CardComp data = {element}/> 
+  )
+})
 
   return (
     <div>
@@ -49,7 +53,9 @@ console.log(kitKats[0].flavor)
         </Row>
 
         <Row className="row3">
-            {kitKats[0].flavor}
+
+          {displayKitKat}
+
         </Row>
       </Container>
     </div>
