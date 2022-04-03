@@ -71,6 +71,16 @@ app.get ('/getFlavors', (req, res) => {
   });
 })
 
+app.get ('/getFlavors/yearRound', (req, res) => {
+  KitKatFlavorsModel.find({
+    "isAvailableYearRound.default":true
+  }, 
+    function(error, result){
+       let message = error ? error : result;
+       console.log(`Flavors retrieved from ${keys.db}`, result)
+      res.json({message});
+  });
+})
 
 
 const port = process.env.PORT || 8080;

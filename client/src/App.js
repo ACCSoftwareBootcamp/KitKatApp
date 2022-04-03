@@ -8,6 +8,7 @@ import Forum from './Components/Forum'
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Dashboard from './Components/Dashboard';
+import YearRound from './Components/YearRound';
 import {Routes,Route} from 'react-router-dom';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path='/Login' element={<Login/>}/>
       <Route path='/Register' element={<Register/>}/>
       <Route path='/Dashboard' element={<Dashboard/>}/>
+      <Route path='/YearRound' element={<YearRound/>}/>
     </Routes>
     </div>
   );

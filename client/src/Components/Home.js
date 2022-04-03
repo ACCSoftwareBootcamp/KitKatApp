@@ -9,13 +9,7 @@ const Home = () => {
 
   const [kitKats, setKitKats] = useState(initialState);
 
-  // const handleChange = (event) => {
-  //   setFormData({
-  //     ...formData,
-  //     [event.target.name] : event.target.value
-  //   })
-  // }
-
+  //rendering all kitkats on first page load
   useEffect(() => {
     axios.get("http://localhost:8080/getFlavors")
     .then(response => {
@@ -27,11 +21,22 @@ const Home = () => {
   //dependency array - if it's blank, it will run when function first mounts (initial page render)
   //if it has stuff in it, it will rerun any time the page updates/changes
 
+//displaying all data from the kitkat query
 let displayKitKat = kitKats.map( element => {
   return(
     <CardComp data = {element}/> 
   )
 })
+
+    const handleChange = (event) => {
+        axios.post('/getFlavors/yearRound')
+        .then(response => {
+          console.log(response.data)
+          setKitKats(response.data.message)
+      })
+        .catch(error => console.log(`Error: ${error}`))
+
+      }
 
   return (
     <div>

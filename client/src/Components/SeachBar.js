@@ -3,7 +3,8 @@ import { Dropdown, Form} from 'react-bootstrap';
 
 
 
-const SearchBar = () => {
+const SearchBar = ({handleChange}) => {
+
  return(
 
 <div className="search">
@@ -14,7 +15,7 @@ const SearchBar = () => {
 
 <Dropdown.Menu>
  <Dropdown.Item onClick="" href="#">All Flavors</Dropdown.Item>
- <Dropdown.Item href="#">Year-Round Flavors</Dropdown.Item>
+ <Dropdown.Item onClick={handleChange} href="#">Year-Round Flavors</Dropdown.Item>
  <Dropdown.Item href="#">Regional Flavors</Dropdown.Item>
  <Dropdown.Item href="#">Seasonal Flavors</Dropdown.Item>
 </Dropdown.Menu>
