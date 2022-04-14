@@ -1,9 +1,10 @@
 
-import { Dropdown, Form} from 'react-bootstrap';
+import { Dropdown, Form } from 'react-bootstrap';
+import Home from "./Home"; 
 
 
 
-const SearchBar = ({handleChange}) => {
+const SearchBar = () => {
 
  return(
 
@@ -14,10 +15,10 @@ const SearchBar = ({handleChange}) => {
 </Dropdown.Toggle>
 
 <Dropdown.Menu>
- <Dropdown.Item onClick="" href="#">All Flavors</Dropdown.Item>
- <Dropdown.Item onClick={handleChange} href="#">Year-Round Flavors</Dropdown.Item>
- <Dropdown.Item href="#">Regional Flavors</Dropdown.Item>
- <Dropdown.Item href="#">Seasonal Flavors</Dropdown.Item>
+ {/* <Dropdown.Item onClick={}>All Flavors</Dropdown.Item> */}
+ <Dropdown.Item onSelect={Home.handleChangeYearRound}>Year-Round Flavors</Dropdown.Item>
+ {/* <Dropdown.Item onClick={}>Regional Flavors</Dropdown.Item> */}
+ {/* <Dropdown.Item onClick={}>Seasonal Flavors</Dropdown.Item> */}
 </Dropdown.Menu>
 </Dropdown>
 

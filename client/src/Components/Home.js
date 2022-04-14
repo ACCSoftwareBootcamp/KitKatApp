@@ -21,22 +21,22 @@ const Home = () => {
   //dependency array - if it's blank, it will run when function first mounts (initial page render)
   //if it has stuff in it, it will rerun any time the page updates/changes
 
+  //rendering year round flavors on dropdown selection
+  const handleChangeYearRound = (event) => {
+    axios.post("http://localhost:8080/getFlavors/yearRound")
+    .then(response => {
+      console.log(response.data)
+      setKitKats(response.data.message)
+  })
+    .catch(error => console.log(`Error: ${error}`))
+  }
+
 //displaying all data from the kitkat query
 let displayKitKat = kitKats.map( element => {
   return(
     <CardComp data = {element}/> 
   )
 })
-
-    const handleChange = (event) => {
-        axios.post('/getFlavors/yearRound')
-        .then(response => {
-          console.log(response.data)
-          setKitKats(response.data.message)
-      })
-        .catch(error => console.log(`Error: ${error}`))
-
-      }
 
   return (
     <div>
