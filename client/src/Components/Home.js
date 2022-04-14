@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     axios.get("http://localhost:8080/getFlavors")
     .then(response => {
-        console.log(response.data)
+        //console.log(response.data)
         setKitKats(response.data.message)
     })
       .catch(error => console.log(`Error: ${error}`))
@@ -21,15 +21,7 @@ const Home = () => {
   //dependency array - if it's blank, it will run when function first mounts (initial page render)
   //if it has stuff in it, it will rerun any time the page updates/changes
 
-  //rendering year round flavors on dropdown selection
-  const handleChangeYearRound = (event) => {
-    axios.post("http://localhost:8080/getFlavors/yearRound")
-    .then(response => {
-      console.log(response.data)
-      setKitKats(response.data.message)
-  })
-    .catch(error => console.log(`Error: ${error}`))
-  }
+
 
 //displaying all data from the kitkat query
 let displayKitKat = kitKats.map( element => {
@@ -54,7 +46,7 @@ let displayKitKat = kitKats.map( element => {
         </Row>
 
         <Row className="row2">
-          <SearchBar />
+          <SearchBar setKitKats={setKitKats} />
         </Row>
 
         <Row className="row3">

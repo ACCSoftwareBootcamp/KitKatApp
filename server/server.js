@@ -66,7 +66,7 @@ app.get ('/getFlavors', (req, res) => {
   KitKatFlavorsModel.find({}, 
     function(error, result){
        let message = error ? error : result;
-       console.log(`Flavors retrieved from ${keys.db}`, result)
+       //console.log(`Flavors retrieved from ${keys.db}`, result)
       res.json({message});
   });
 })
