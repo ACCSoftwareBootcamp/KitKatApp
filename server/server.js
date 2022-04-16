@@ -82,6 +82,28 @@ app.get ('/getFlavors/yearRound', (req, res) => {
   });
 })
 
+app.get ('/getFlavors/regional', (req, res) => {
+  KitKatFlavorsModel.find({
+    "isRegional.default":true
+  }, 
+    function(error, result){
+       let message = error ? error : result;
+       console.log(`Flavors retrieved from ${keys.db}`, result)
+      res.json({message});
+  });
+})
+
+app.get ('/getFlavors/seasonal', (req, res) => {
+  KitKatFlavorsModel.find({
+    "isSeasonal.default":true
+  }, 
+    function(error, result){
+       let message = error ? error : result;
+       console.log(`Flavors retrieved from ${keys.db}`, result)
+      res.json({message});
+  });
+})
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
