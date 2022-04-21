@@ -70,7 +70,7 @@ const SearchBar = ({setKitKats}) => {
 </Dropdown>
 
 <Form>
-<Form.Control type="text" size="md" placeholder="Search Kit Kats" />
+<Form.Control onSubmit="handleChangeSearchBar" type="text" size="md" placeholder="Search Kit Kats" />
 </Form>
 </div>
  )
