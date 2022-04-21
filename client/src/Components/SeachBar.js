@@ -5,7 +5,7 @@ import axios from 'axios';
 const SearchBar = ({setKitKats}) => {
   
   //selecting flavors from dropdown menu
-  const handleChangeSelectFlavors = (event) => {
+  const handleChangeDropDown = (event) => {
        if (event === "All Flavors") {
         //rendering all flavors on dropdown selection
          axios.get("http://localhost:8080/getFlavors")
@@ -41,10 +41,22 @@ const SearchBar = ({setKitKats}) => {
    }
  }
 
+ 
+ const handleChangeSearchBar = (keyword) => {
+     console.log(keyword.nativeEvent.data);
+
+ }
+
+
+// 1. take in value entered by user
+// 2. send request to database
+// 3. find matching ID/partial results
+// 4. return results of matching ID
+
  return(
 
 <div className="search">
-<Dropdown className="d-inline mx-2" onSelect={handleChangeSelectFlavors}>
+<Dropdown className="d-inline mx-2" onSelect={handleChangeDropDown}>
  <Dropdown.Toggle id="dropdown-autoclose-true" >
  Show All
 </Dropdown.Toggle>
